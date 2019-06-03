@@ -22,7 +22,7 @@
     <meta name="description" content>
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Accumulateadily - 厚积薄发</title>
+    <title>基于隐马尔科夫模型的分词任务 · Accumulateadily - 厚积薄发</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -77,6 +77,8 @@
 
     <link rel="preload" href="/css/style.css?v=20180824" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <link rel="stylesheet" href="/css/mobile.css?v=20180824" media="(max-width: 980px)">
+    
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     
     <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
 /* This file is meant as a standalone workflow for
@@ -201,14 +203,23 @@
 </head>
 
     
-        <body class="home-body">
+        <body class="post-body">
     
     
-<header class="header index-header">
+<header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/">Nice to meet you ~</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">基于隐马尔科夫模型的分词任务</a>
+            </div>
+    </div>
     
     <a class="home-link" href="/">Nice to meet you ~</a>
 </header>
@@ -227,17 +238,17 @@ height:50vh;
     <!-- 主页  -->
     
     
-    <!-- 文章页  -->
+    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/intro/index-bg.jpg)"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            Nice to meet you ~
-            <!-- 文章页  -->
+            基于隐马尔科夫模型的分词任务
+            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
@@ -245,10 +256,38 @@ height:50vh;
             <!-- 主页副标题  -->
             
             
-            <!-- 文章页  -->
+            <!-- 404 -->
             
         </p>
         <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">1k</span>阅读时长: <span class="post-count reading-time">3 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2019/06/03</span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
         
     </div>
 </div>
@@ -349,140 +388,75 @@ height:50vh;
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/06/03/HMM/">
-            
-                <span>基于隐马尔科夫模型的分词任务</span>
-        </a>
-        <div class="abstract-content">
-            模型的定义&#8195;&#8195;HMM（Hidden Markov Model）是一种关于时序的概率图模型，是由一个隐藏的不可观测的状态随机序列，再由各个状态生成一个观测值而产生观测随机序列的过程。隐藏的状态序列称为状态序列（state sequence），生成的观测随机序列称为观测序列（observation sequence）。下面是隐马尔可夫模型的图结构：
-&#8195;&#8195;其中，[y1, y2 …. yi, yn] 是状态序列，[x1, x2 …. xi, xn]是观测序列，yi 表示在 i 时刻的状态值， xi 表示在 i 时刻的观测值。
-五元组，三类问题，三个...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/06/03</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/06/03/hello-world/">
-            
-                <span>Hello World</span>
-        </a>
-        <div class="abstract-content">
-            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick StartCreate a new post1$ hexo new "My New Post"
+            <main class="main post-page">
+    <article class="article-entry">
+        <h2 id="模型的定义"><a href="#模型的定义" class="headerlink" title="模型的定义"></a>模型的定义</h2><p>&#8195;&#8195;HMM（Hidden Markov Model）是一种关于时序的概率图模型，是由一个隐藏的不可观测的状态随机序列，再由各个状态生成一个观测值而产生观测随机序列的过程。隐藏的状态序列称为状态序列（state sequence），生成的观测随机序列称为观测序列（observation sequence）。下面是隐马尔可夫模型的图结构：<br><img src="HMM/HMM.png" alt="image"></p>
+<p>&#8195;&#8195;其中，[y1, y2 …. yi, yn] 是状态序列，[x1, x2 …. xi, xn]是观测序列，yi 表示在 i 时刻的状态值， xi 表示在 i 时刻的观测值。</p>
+<h2 id="五元组，三类问题，三个假设"><a href="#五元组，三类问题，三个假设" class="headerlink" title="五元组，三类问题，三个假设"></a>五元组，三类问题，三个假设</h2><p><font color="#0099ff" size="4">要确定一个HMM模型，我们需要知道这个五元组:</font></p>
+<blockquote>
+<p>StatusSet:      状态值集合<br>ObservedSet:    观察值集合<br>TransProbMatrix:转移概率矩阵<br>EmitProbMatrix: 发射概率矩阵<br>InitStatus:     初始状态分布</p>
+</blockquote>
+<p><font color="#0099ff" size="4">当通过五元组中某些已知条件来求未知时，就得到HMM的三类问题：</font></p>
+<blockquote>
+<p>（1）参数(StatusSet,TransProbMatrix,EmitRobMatrix,InitStatus)已知的情况下，求解观察值序列。(Forward-backward算法)<br>（2）参数(ObservedSet,TransProbMatrix,EmitRobMatrix,InitStatus)已知的情况下，求解状态值序列。(viterbi算法)<br>（3）参数(ObservedSet)已知的情况下，求解(TransProbMatrix,   EmitRobMatrix,InitStatus)。(Baum-Welch算法) </p>
+</blockquote>
+<p>其中，第三种问题最玄乎也最不常用，第二种问题最常用，【中文分词】，【语音识别】, 【新词发现】，【词性标注】都有它的一席之地。中文分词这个例子属于第二个问题，即解码问题。</p>
+<p><font color="#0099ff" size="4">HMM模型的三个基本假设如下： </font></p>
+<blockquote>
+<p>（1）有限历史性假设（S[i] 只由S[i-1]决定）:<br>P(Status[i]|Status[i-1],Status[i-2],…Status[1]) =         P(Status[i]|Status[i-1])<br>（2）齐次性假设(状态和当前时刻无关):<br>P(Status[i]|Status[i-1]) = P(Status[j]|Status[j-1])<br>（3）观察值独立性假设(观察值只取决于当前状态值):<br>P(Observed[i]|Status[i],Status[i-1],…,Status[1]) =         P(Observed[i]|Status[i])<br>从网络图中看的话，即，xi 只与 yi 有关， yi 只与 y(i-1)有关。</p>
+</blockquote>
+<p><font color="#0099ff" size="4">确定一个HMM模型，我们需要知道以下信息:</font></p>
+<blockquote>
+<p>(1)首先我们得知道，yi 和 xi 都能取什么样的值，也就是状态集合和观测值集合。<br>(2)有了状态集合，我们回到假设1，任意时刻的状态只依赖前一时刻的状态，那我们需要知道每个状态之间的转换概率，这个概率就被称为状态转移概率。<br>(3)状态之间的转移概率有了，我们还需要知道模型在初始时刻各状态出现的概率，就是所谓的初始状态概率。<br>(4)回到假设2，任意时刻的观测值，只与该时刻的状态值有关，那么我们要知道，在一个状态下，所对应的各个观测值的概率，就是所谓的观测概率（也称发射概率）。</p>
+</blockquote>
+<h2 id="中文分词"><a href="#中文分词" class="headerlink" title="中文分词"></a>中文分词</h2><p>把分词这个场景用HMM建模，我们可以认为，每个字（观测值Observed）有一个对应的状态（状态值Status），状态值集合（StatusSet）我们用(B, M, E, S): {B:begin, M:middle, E:end, S:single}表示:</p>
+<blockquote>
+<p>B：一个词的开始<br>E：一个词的结束<br>M：一个词的中间<br>S：单字成词</p>
+</blockquote>
+<p><font color="red" size="3">可以发现一个规律：B后面只可能接(M or E)，不可能接(B or S)。而M后面也只可能接(M or E)，不可能接(B, S)。</font></p>
+<p>观察值集合（ObservedSet）为就是所有汉字(一二三四五六七八九十……)，甚至包括标点符号所组成的集合。例如：  </p>
+<blockquote>
+<p>S S E S E S S E S E S E<br>我本科毕业于湖北科技学院</p>
+</blockquote>
+<p>我们可以根据这句话的状态序列将句子切分为：</p>
+<blockquote>
+<p>我/本科/毕业/于/湖北/科技/学院</p>
+</blockquote>
+<p><font color="#0066ff" size="4">在此处，我们已经将分词的问题，转换为求状态序列的问题。这时我们就可以把分词的问题，具体化为：已知ObservedSet, TransProbMatrix，EmitProbMatrix，InitStatus ，求状态值序列 （StatusSet）。</font></p>
 
-More info: Writing
-Run server1$ hexo server
-
-Mo...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/06/03</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
     </article>
+    <!-- license  -->
     
     <!-- paginator  -->
-    
-</main>
-            <!-- profile -->
+    <ul class="post-paginator">
+        <li class="next">
             
-            <div class="profile">
-    <img class="profile-avatar" alt="avatar" src="/avatar/ww.jpg">
-    <div class="profile-name">Accumulateadily</div>
-    
-    <div class="profile-signature">
-        Accumulate teadily
-    </div>
-    
-    
-    <div class="profile-social">
-        
-    
-        
-    
-        
+        </li>
+        <li class="previous">
             
-                <a href="//github.com/Accumulateadily" class="iconfont-archer github" target="_blank" title="github"></a>
+                <div class="prevSlogan">Previous Post</div>
+                <a href="/2019/06/03/hello-world/" title="Hello World">
+                    <div class="prevTitle">Hello World</div>
+                </a>
             
-        
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
     
-        
     
-        
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
     
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
     
 
-    </div>
-    
-    
-        <div class="friends">
-            <div>FRIENDS</div>
-            
-                
-                    <span>
-                        <a href="//hanochma.github.io" target="_black">Myfriends</a>
-                    </span>
-                
-            
-        </div>
-    
-    
-</div>
+    <!-- 评论 -->
+</main>
+            <!-- profile -->
             
         </div>
         <footer class="footer footer-unloaded">
@@ -547,6 +521,24 @@ Mo...
 </footer>
     </div>
     <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#模型的定义"><span class="toc-number">1.</span> <span class="toc-text">模型的定义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#五元组，三类问题，三个假设"><span class="toc-number">2.</span> <span class="toc-text">五元组，三类问题，三个假设</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#中文分词"><span class="toc-number">3.</span> <span class="toc-text">中文分词</span></a></li></ol>
+    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -679,6 +671,8 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
      
     </body>
 </html>
