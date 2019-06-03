@@ -13,9 +13,9 @@
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <meta name="author" content="John Doe">
+    <meta name="author" content="Wanglang">
     <meta name="renderer" content="webkit">
-    <meta name="copyright" content="John Doe">
+    <meta name="copyright" content="Wanglang">
     
     <meta name="keywords" content="hexo,hexo-theme,hexo-blog">
     
@@ -390,10 +390,9 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <p>##<font face="微软雅黑">模型的定义</font><br>&#8195;&#8195;HMM（Hidden Markov Model）是一种关于时序的概率图模型，是由一个隐藏的不可观测的状态随机序列，再由各个状态生成一个观测值而产生观测随机序列的过程。隐藏的状态序列称为状态序列（state sequence），生成的观测随机序列称为观测序列（observation sequence）。下面是隐马尔可夫模型的图结构：<br><img src="../IMG/HMM.PNG" alt="image"></p>
+        <h2 id="模型的定义"><a href="#模型的定义" class="headerlink" title="模型的定义"></a>模型的定义</h2><p>&#8195;&#8195;HMM（Hidden Markov Model）是一种关于时序的概率图模型，是由一个隐藏的不可观测的状态随机序列，再由各个状态生成一个观测值而产生观测随机序列的过程。隐藏的状态序列称为状态序列（state sequence），生成的观测随机序列称为观测序列（observation sequence）。下面是隐马尔可夫模型的图结构：<br><img src="../IMG/HMM.PNG" alt="image"></p>
 <p>&#8195;&#8195;其中，[y1, y2 …. yi, yn] 是状态序列，[x1, x2 …. xi, xn]是观测序列，yi 表示在 i 时刻的状态值， xi 表示在 i 时刻的观测值。</p>
-<p>##<font face="微软雅黑">五元组，三类问题，三个假设</font></p>
-<p><font color="#0099ff" size="4">要确定一个HMM模型，我们需要知道这个五元组:</font></p>
+<h2 id="五元组，三类问题，三个假设"><a href="#五元组，三类问题，三个假设" class="headerlink" title="五元组，三类问题，三个假设"></a>五元组，三类问题，三个假设</h2><p><font color="#0099ff" size="4">要确定一个HMM模型，我们需要知道这个五元组:</font></p>
 <blockquote>
 <p>StatusSet:      状态值集合<br>ObservedSet:    观察值集合<br>TransProbMatrix:转移概率矩阵<br>EmitProbMatrix: 发射概率矩阵<br>InitStatus:     初始状态分布</p>
 </blockquote>
@@ -410,7 +409,7 @@ height:50vh;
 <blockquote>
 <p>(1)首先我们得知道，yi 和 xi 都能取什么样的值，也就是状态集合和观测值集合。<br>(2)有了状态集合，我们回到假设1，任意时刻的状态只依赖前一时刻的状态，那我们需要知道每个状态之间的转换概率，这个概率就被称为状态转移概率。<br>(3)状态之间的转移概率有了，我们还需要知道模型在初始时刻各状态出现的概率，就是所谓的初始状态概率。<br>(4)回到假设2，任意时刻的观测值，只与该时刻的状态值有关，那么我们要知道，在一个状态下，所对应的各个观测值的概率，就是所谓的观测概率（也称发射概率）。</p>
 </blockquote>
-<p>##<font face="微软雅黑">中文分词<br>把分词这个场景用HMM建模，我们可以认为，每个字（观测值Observed）有一个对应的状态（状态值Status），状态值集合（StatusSet）我们用(B, M, E, S): {B:begin, M:middle, E:end, S:single}表示:</font></p>
+<h2 id="中文分词"><a href="#中文分词" class="headerlink" title="中文分词"></a>中文分词</h2><p>把分词这个场景用HMM建模，我们可以认为，每个字（观测值Observed）有一个对应的状态（状态值Status），状态值集合（StatusSet）我们用(B, M, E, S): {B:begin, M:middle, E:end, S:single}表示:</p>
 <blockquote>
 <p>B：一个词的开始<br>E：一个词的结束<br>M：一个词的中间<br>S：单字成词</p>
 </blockquote>
@@ -427,14 +426,6 @@ height:50vh;
 
     </article>
     <!-- license  -->
-    
-        <div class="license-wrapper">
-            <p>原文作者：<a href="http://yoursite.com">John Doe</a>
-            </p><p>原文链接：<a href="http://yoursite.com/2019/06/03/Hmm/">http://yoursite.com/2019/06/03/Hmm/</a>
-            </p><p>发表日期：<a href="http://yoursite.com/2019/06/03/Hmm/">June 3rd 2019, 5:24:25 pm</a>
-            </p><p>更新日期：<a href="http://yoursite.com/2019/06/03/Hmm/">June 3rd 2019, 8:31:56 pm</a>
-            </p><p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
-        </div>
     
     <!-- paginator  -->
     <ul class="post-paginator">
@@ -546,7 +537,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#模型的定义"><span class="toc-number">1.</span> <span class="toc-text">模型的定义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#五元组，三类问题，三个假设"><span class="toc-number">2.</span> <span class="toc-text">五元组，三类问题，三个假设</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#中文分词"><span class="toc-number">3.</span> <span class="toc-text">中文分词</span></a></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
@@ -659,7 +650,7 @@ jsonContent:
     <script>
     var siteMeta = {
         root: "/",
-        author: "John Doe"
+        author: "Wanglang"
     }
 </script>
     <!-- CDN failover -->
