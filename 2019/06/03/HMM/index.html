@@ -416,13 +416,14 @@ height:50vh;
 <p><font color="red" size="3">可以发现一个规律：B后面只可能接(M or E)，不可能接(B or S)。而M后面也只可能接(M or E)，不可能接(B, S)。</font></p>
 <p>观察值集合（ObservedSet）为就是所有汉字(一二三四五六七八九十……)，甚至包括标点符号所组成的集合。例如：  </p>
 <blockquote>
-<p>S S E S E S S E S E S E<br>我本科毕业于湖北科技学院</p>
+<p>S B E B E S B E B E B E<br>我本科毕业于湖北科技学院</p>
 </blockquote>
 <p>我们可以根据这句话的状态序列将句子切分为：</p>
 <blockquote>
 <p>我/本科/毕业/于/湖北/科技/学院</p>
 </blockquote>
 <p><font color="#0066ff" size="4">在此处，我们已经将分词的问题，转换为求状态序列的问题。这时我们就可以把分词的问题，具体化为：已知ObservedSet, TransProbMatrix，EmitProbMatrix，InitStatus ，求状态值序列 （StatusSet）。</font></p>
+<h2 id="Viterbi算法"><a href="#Viterbi算法" class="headerlink" title="Viterbi算法"></a>Viterbi算法</h2><p>未完待续</p>
 
     </article>
     <!-- license  -->
@@ -537,7 +538,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#模型的定义"><span class="toc-number">1.</span> <span class="toc-text">模型的定义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#五元组，三类问题，三个假设"><span class="toc-number">2.</span> <span class="toc-text">五元组，三类问题，三个假设</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#中文分词"><span class="toc-number">3.</span> <span class="toc-text">中文分词</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#模型的定义"><span class="toc-number">1.</span> <span class="toc-text">模型的定义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#五元组，三类问题，三个假设"><span class="toc-number">2.</span> <span class="toc-text">五元组，三类问题，三个假设</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#中文分词"><span class="toc-number">3.</span> <span class="toc-text">中文分词</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Viterbi算法"><span class="toc-number">4.</span> <span class="toc-text">Viterbi算法</span></a></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
