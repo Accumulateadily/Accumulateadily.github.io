@@ -29,7 +29,7 @@
 <meta property="og:description" content="模型的定义&amp;#8195;&amp;#8195;HMM（Hidden Markov Model）是一种关于时序的概率图模型，是由一个隐藏的不可观测的状态随机序列，再由各个状态生成一个观测值而产生观测随机序列的过程。隐藏的状态序列称为状态序列（state sequence），生成的观测随机序列称为观测序列（observation sequence）。下面是隐马尔可夫模型的图结构： &amp;#8195;&amp;#8195;">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://yoursite.com/2019/06/03/HMM/HMM.jpg">
-<meta property="og:updated_time" content="2020-04-04T08:20:45.076Z">
+<meta property="og:updated_time" content="2020-05-09T03:52:06.562Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="基于隐马尔科夫模型的分词任务">
 <meta name="twitter:description" content="模型的定义&amp;#8195;&amp;#8195;HMM（Hidden Markov Model）是一种关于时序的概率图模型，是由一个隐藏的不可观测的状态随机序列，再由各个状态生成一个观测值而产生观测随机序列的过程。隐藏的状态序列称为状态序列（state sequence），生成的观测随机序列称为观测序列（observation sequence）。下面是隐马尔可夫模型的图结构： &amp;#8195;&amp;#8195;">
@@ -435,21 +435,20 @@ height:50vh;
 <blockquote>
 <p>(1)首先我们得知道，yi 和 xi 都能取什么样的值，也就是状态集合和观测值集合。<br>(2)有了状态集合，我们回到假设1，任意时刻的状态只依赖前一时刻的状态，那我们需要知道每个状态之间的转换概率，这个概率就被称为状态转移概率。<br>(3)状态之间的转移概率有了，我们还需要知道模型在初始时刻各状态出现的概率，就是所谓的初始状态概率。<br>(4)回到假设2，任意时刻的观测值，只与该时刻的状态值有关，那么我们要知道，在一个状态下，所对应的各个观测值的概率，就是所谓的观测概率（也称发射概率）。</p>
 </blockquote>
-<h2 id="中文分词"><a href="#中文分词" class="headerlink" title="中文分词"></a>中文分词</h2><p>把分词这个场景用HMM建模，我们可以认为，每个字（观测值Observed）有一个对应的状态（状态值Status），状态值集合（StatusSet）我们用(B, M, E, S): {B:begin, M:middle, E:end, S:single}表示:</p>
+<h2 id="中文分词"><a href="#中文分词" class="headerlink" title="中文分词"></a>中文分词</h2><p>&#8195;&#8195;把分词这个场景用HMM建模，我们可以初步认为，句中每个字（观测值Observed）有一个对应的状态（状态值Status），状态值集合（StatusSet）我们用(B, M, E, S): {B:begin, M:middle, E:end, S:single}表示:</p>
 <blockquote>
 <p>B：一个词的开始<br>E：一个词的结束<br>M：一个词的中间<br>S：单字成词</p>
 </blockquote>
-<p><font color="red" size="3">可以发现一个规律：B后面只可能接(M or E)，不可能接(B or S)。而M后面也只可能接(M or E)，不可能接(B, S)。</font></p>
-<p>观察值集合（ObservedSet）为就是所有汉字(一二三四五六七八九十……)，甚至包括标点符号所组成的集合。例如：  </p>
+<p><font color="red" size="3">&#8195;&#8195;可以发现一个规律：B后面只可能接(M or E)，不可能接(B or S)。而M后面也只可能接(M or E)，不可能接(B, S)。</font></p>
+<p>&#8195;&#8195;观察值集合（ObservedSet）为就是所有汉字(一二三四五六七八九十……)，甚至包括标点符号所组成的集合。例如：  </p>
 <blockquote>
 <p>S B E B E S B E B E B E<br>我本科毕业于湖北科技学院</p>
 </blockquote>
-<p>我们可以根据这句话的状态序列将句子切分为：</p>
+<p>&#8195;&#8195;我们可以根据这句话的状态序列将句子切分为：</p>
 <blockquote>
 <p>我/本科/毕业/于/湖北/科技/学院</p>
 </blockquote>
-<p><font color="#0066ff" size="4">在此处，我们已经将分词的问题，转换为求状态序列的问题。这时我们就可以把分词的问题，具体化为：已知ObservedSet, TransProbMatrix，EmitProbMatrix，InitStatus ，求状态值序列 （StatusSet）。</font></p>
-<h2 id="Viterbi算法"><a href="#Viterbi算法" class="headerlink" title="Viterbi算法"></a>Viterbi算法</h2><p>未完待续</p>
+<p><font color="#0066ff" size="4">&#8195;&#8195;在此处，我们已经将分词的问题，转换为求状态序列的问题。可以把分词的问题，转化成为：已知ObservedSet, TransProbMatrix，EmitProbMatrix，InitStatus ，求状态值序列 （StatusSet）。</font></p>
 
     </article>
     <!-- license  -->
@@ -577,7 +576,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#模型的定义"><span class="toc-number">1.</span> <span class="toc-text">模型的定义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#五元组，三类问题，三个假设"><span class="toc-number">2.</span> <span class="toc-text">五元组，三类问题，三个假设</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#中文分词"><span class="toc-number">3.</span> <span class="toc-text">中文分词</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Viterbi算法"><span class="toc-number">4.</span> <span class="toc-text">Viterbi算法</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#模型的定义"><span class="toc-number">1.</span> <span class="toc-text">模型的定义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#五元组，三类问题，三个假设"><span class="toc-number">2.</span> <span class="toc-text">五元组，三类问题，三个假设</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#中文分词"><span class="toc-number">3.</span> <span class="toc-text">中文分词</span></a></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
